@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style-grid-responsive.css">
+    <title>Document</title>
+</head>
+<style>
+    .card-flip{
+        perspective: 800px;
+
+    }
+    .card-flip-inner {
+        text-align: center;
+        transition: all .5s;
+        position: relative;
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-flip:hover .card-flip-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-flip-inner-back,
+    .card-flip-inner-front {
+        backface-visibility: hidden;
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .card-flip-inner-back {
+        background-color: rgb(17, 130, 92);
+        transform: rotateY(180deg);
+       position: absolute;
+       top: 0;
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-xs-12 col-s-12 col-md-6 col-lg-4 col-md-offset-3 col-lg-offset-4">
+                <div class="card-flip">
+                    <div class="card-flip-inner">
+                        <div class="card-flip-inner-front">
+                            <img class="image-responsive" alt="card-image" src="./assets/img/6.jpg">
+                        </div>
+                        <div class="card-flip-inner-back">
+                            <h2>team work</h2>
+                            <p>web developers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

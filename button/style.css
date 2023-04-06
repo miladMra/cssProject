@@ -1,0 +1,36 @@
+.btn-wrapper{
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+    cursor: pointer;
+    perspective: 1000;
+}
+.btn-container{
+    transform-style: preserve-3d;
+    transition: all .5s;
+    width: 100%;
+    height: 100%;
+}
+.btn{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.btn-front{
+    background: linear-gradient(to right, #ca3737, #ff5252);
+    transform: translateZ(23px) ;
+}
+.btn-back{
+    color: #fff;
+    background: linear-gradient(to right, #5e5c5c, #292828);
+    transform: rotateX(90deg) translateZ(23px);
+}
+.btn-wrapper:hover .btn-container{
+    transform: rotateX(-90deg);
+}
+

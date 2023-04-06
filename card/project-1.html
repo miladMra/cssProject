@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./assets/css/style-grid-responsive.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<style>
+  body {
+    background-color: #d8e0e5;
+    min-height: 100%;
+    font-size: 16px;
+    font-family: Vazir-medium;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .project-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 34px;
+    color: rgb(101, 101, 101);
+    margin: 30px 0;
+  }
+  .card{
+    position: relative;
+  }
+  .card-header{
+    overflow: hidden;
+    transition: all .3s;
+    height: 235px;
+  }
+  .card:hover .card-header{
+    height: 90px;
+  }
+  .card-header img{
+    height: auto;
+    transition: all .3s;
+  }
+  .card:hover .card-header img{
+    transform: scale(1.2);
+
+  }
+  .card-date {
+    top: 0;
+    right: 11px;
+    background-color: #08c;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1px 12px;
+    border-radius: 5px;
+    color: #fff;
+  }
+  .card-date_month{
+    font-size: 11px;
+  }
+  .card-body{
+    background-color: #fff;
+    padding: 10px 15px;
+    height: 185px;
+    transition: all .3s;
+  }
+  .card:hover .card-body{
+    height: 330px;
+  }
+  .card-body .card-category{
+    position: absolute;
+    top: -27px;
+    left: 7px;
+    background-color: #08c;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+  .card-body .card-category a{
+    color: #fff;
+  }
+  .card-body .card-title{
+    font-size: 21px;
+    color: #000;
+    font-weight: bold;
+  }
+  .card-body .card-subTitle{
+    font-size: 19px;
+    color: #08c;
+  }
+  .card-body .card-description{
+    opacity: 0;
+    color: #666c74;
+    font-size: 16px;
+    line-height: 27px;
+    visibility: hidden;
+    transition: all .3s;
+  }
+  .card:hover .card-description{
+    opacity: 1;
+    visibility: visible;
+  }
+  .card-footer{
+    display: flex;
+    padding: 10px;
+    color: #a3a9ab;
+    font-size: 13px;
+    margin-top: 40px;
+    position: absolute;
+    top: 335px;
+  }
+  .card-footer .time,.card-footer .comment{
+    display: flex;
+    align-items: center;
+  }
+  .card-footer .time{
+    margin-left: 20px;
+  }
+</style>
+
+<body>
+  <p class="project-title">پروژه شماره 3</p>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-xs-12 col-s-12 col-md-6 col-lg-4 col-md-offset-3 col-lg-offset-4">
+        <div class="card">
+          <div class="card-header relative">
+            <img class="image-responsive" src="./assets/img/a2.jpg" alt="card-image">
+            <div class="card-date absolute">
+              <span class="card-date_day">12</span>
+              <span class="card-date_month">اردیبهشت</span>
+            </div>
+          </div>
+          <div class="card-body relative">
+            <div class="card-category"><a href="">طراحی وب</a></div>
+            <div class="card-title my-2">انیمیشن‌ها در CSS</div>
+            <div class="card-subTitle mb-3">قسمت اول : معرفی پراپرتی‌ها</div>
+            <p class="card-description">
+              در این جلسه و چند جلسه آینده قصد داریم بطور کامل در مورد مبحث بسیار
+              کاربردی و جذاب انیمیشن ها در CSS3 بپردازیم...
+            </p>
+
+          </div>
+          <div class="card-footer">
+            <div class="time">
+              <i class="material-icons">alarm</i>
+              <span>30 دقیقه</span>
+            </div>
+            <div class="comment ">
+              <i class="material-icons">comment</i>
+              <span>30 دقیقه</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.menu').click(function () {
+        $('.overlay').toggleClass('anim');
+      })
+    });
+  </script>
+</body>
+
+</html>

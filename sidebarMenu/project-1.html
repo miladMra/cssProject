@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<style>
+    body {
+        position: relative;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    ul {
+        list-style: none;
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        background: #1d1313;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .wrapper .menu {
+        position: absolute;
+        left: 10px;
+        top: 20px;
+        height: 3px;
+        width: 20px;
+        background-color: #fff;
+        cursor: pointer;
+        z-index: 99;
+    }
+
+    .wrapper .menu::after,
+    .wrapper .menu::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 3px;
+        width: 20px;
+        background-color: #fff;
+    }
+
+    .wrapper .menu::after {
+        top: -6px;
+    }
+
+    .wrapper .menu::before {
+        top: 6px;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 200px;
+    }
+
+    .title h1 {
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 50px;
+    }
+
+    .title p {
+        color: #30c4c9;
+        font-size: 20px;
+    }
+
+    .overlay {
+        background-color: #ff6b81;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 10px;
+        width: 100%;
+    }
+    .overlay ul{
+        text-align: center;
+        width: 100%;
+        margin-top: 200px;
+        font-size: 18px;
+    }
+
+    .overlay ul li{
+        margin: 30px 0;
+    }
+
+    .overlay ul li a{
+        color: #fff;
+        position: relative;
+    }
+    .overlay ul li a::after{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 1%;
+        top: 25px;
+        left: 0;
+        background-color: #fff;
+        transition: all .2s ease-out;
+
+    }
+
+    .overlay ul li a:hover:after{
+        width: 100%;
+    }
+    .anim{
+
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 25%;
+        animation: menu-anim 1.5s ease-out forwards;
+    }
+    @keyframes menu-anim{
+        0%{
+           width: 100%;
+           height: 10px;
+        }
+
+        33%{
+           width: 10px;
+           height: 10px;
+        }
+        66%{
+            width: 10px;
+            height: 100%;
+        }
+        100%{
+            width: 25%;
+            height: 100%;
+        }
+    }
+
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <h1> پروژه شماره 1 </h1>
+            <p>روی دکمه بالا سمت چپ کلیک کنید.</p>
+        </div>
+        <div class="menu"></div>
+        <div class="overlay anim">
+            <ul>
+                <li><a href="">خانه</a></li>
+                <li><a href="">دوره‌های آموزشی</a></li>
+                <li><a href="">تماس با ما</a></li>
+                <li><a href="">درباره ما</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+   $('.menu').click(function(){
+       $('.overlay').toggleClass('anim');
+   })
+        });
+    </script>
+</body>
+
+</html>

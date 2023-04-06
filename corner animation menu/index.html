@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        direction: rtl;
+    }
+
+    *,
+    *::after,
+    *::before {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .circel-menu {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .menu-btn {
+        background-color: #fd4235;
+        color: #fff;
+        display: block;
+        height: 70px;
+        width: 70px;
+        box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+        cursor: pointer;
+        text-align: center;
+        border-radius: 70%;
+        line-height: 78px;
+    }
+
+    .circel-menu .menu-btn i {
+        font-size: 24px;
+        transition: transform .5s;
+    }
+
+    .items-wrapper a {
+        position: absolute;
+        bottom: 6px;
+        left: 12px;
+        width: 48px;
+        height: 48px;
+        display: block;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.1);
+        text-align: center;
+        line-height: 43px;
+        border-radius: 50%;
+        z-index: -1;
+        transition: transform .3s ease;
+    }
+
+    .circel-menu::after {
+        content: '';
+        background-color: #fd4235;
+        color: #fff;
+        display: block;
+        height: 70px;
+        width: 70px;
+        border-radius: 70%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -2;
+        transition: transform .3s;
+    }
+
+    .active .menu-btn i{
+        transform: rotate(-45deg);
+    }
+    .active::after{
+        transform: scale3d(5.5, 5.5, 1);
+    }
+    .active  .items-wrapper a:nth-child(1){
+        transform: translate(20px,-165px);
+    }
+    .active  .items-wrapper a:nth-child(2){
+        transform: translate(-73px,-142px);
+    }
+    .active  .items-wrapper a:nth-child(3){
+        transform: translate(-134px,-67px);
+    }
+    .active  .items-wrapper a:nth-child(4){
+        transform: translate(-160px,19px);
+    }
+</style>
+
+<body>
+    <div id="circle-menu" class="circel-menu">
+        <a  class="menu-btn">
+            <i class="fa fa-plus"></i>
+        </a>
+        <nav class="items-wrapper">
+            <a href="#" class="menu-item fa fa-home"></a>
+            <a href="#" class="menu-item fa fa-user"></a>
+            <a href="#" class="menu-item fa fa-chart-pie"></a>
+            <a href="#" class="menu-item fa fa-cog"></a>
+        </nav>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          $(".menu-btn").click(function () {
+            $("#circle-menu").toggleClass("active");
+          });
+        });
+      </script>
+</body>
+
+</html>

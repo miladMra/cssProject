@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+    <link rel="stylesheet" href="./assets/css/style-grid-responsive.css">
+</head>
+<style>
+    ul {
+        list-style: none;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 3px 7px -1px rgb(0 0 0 / 10%);
+        background-color: #fff;
+        border-radius: 5px;
+        margin-top: 50px;
+
+
+    }
+
+    .card-meta {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        width: 100%;
+        transition: all .5s;
+    }
+
+    .card-meta .photo {
+        background-image: url('./assets/img/desk.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transition: all .5s;
+    }
+
+    .card .details {
+        position: absolute;
+        top: 0px;
+        bottom: 0;
+        right: 0px;
+        color: #fff;
+        background-color: rgb(0 0 0 / 60%);
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        opacity: 1;
+        transition: all .5s;
+    }
+
+    .card .details li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .card .details li i {
+        margin-left: 8px;
+    }
+
+    .card .details li a {
+        font-size: 15px;
+        color: #fff;
+        margin-left: 10px;
+    }
+
+    .card .details li a:hover {
+        color: #ddd;
+    }
+
+    .card-description {
+        position: relative;
+        height: 100%;
+        margin-right: 15px;
+    }
+
+    .card-description::before {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 30px;
+        height: 100%;
+        right: -35px;
+        transform: skew(-3deg);
+    }
+
+    .card-description h1 {
+        font-size: 23px;
+    }
+
+    .card-description h2 {
+        font-size: 16px;
+        color: #a2a2a2;
+        font-weight: 300;
+        margin: 15px 0;
+    }
+
+    .card-description h2::before {
+        content: '';
+        position: absolute;
+        top: 80px;
+        height: 5px;
+        background: #5ad67d;
+        width: 35px;
+    }
+
+    .card-description p {
+        font-size: 17px;
+        margin: 20px 0;
+    }
+
+    .card-description a {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(52, 120, 221);
+        color: #fff;
+        padding: 6px 35px;
+        font-size: 15px;
+        border-radius: 0 5px;
+    }
+
+
+    @media screen and (min-width:768px) {
+        .card {
+            flex-direction: row;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            flex-basis: 20%;
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            transition: all .5s;
+        }
+
+
+        .card .details {
+
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        .card .details li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .card .details li i {
+            margin-left: 8px;
+        }
+
+        .card .details li a {
+            font-size: 15px;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .card .details li a:hover {
+            color: #ddd;
+        }
+
+        .card-description {
+            flex-basis: 80%;
+            position: relative;
+            height: 100%;
+            margin-right: 15px;
+        }
+
+        .card-description::before {
+            content: '';
+            background-color: #fff;
+            position: absolute;
+            width: 30px;
+            height: 100%;
+            right: -35px;
+            transform: skew(-3deg);
+        }
+
+        .card-description h1 {
+            font-size: 23px;
+        }
+
+        .card-description h2 {
+            font-size: 16px;
+            color: #a2a2a2;
+            font-weight: 300;
+            margin: 15px 0;
+        }
+
+        .card-description h2::before {
+            content: '';
+            position: absolute;
+            top: 80px;
+            height: 5px;
+            background: #5ad67d;
+            width: 35px;
+        }
+
+        .card-description p {
+            font-size: 17px;
+            margin: 20px 0;
+        }
+
+        .card-description a {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(52, 120, 221);
+            color: #fff;
+            padding: 6px 35px;
+            font-size: 15px;
+            border-radius: 0 5px;
+        }
+
+        .card:hover .card-meta {
+            flex-basis: 50%;
+        }
+
+        .card:hover .photo {
+            transform: scale(1.3);
+        }
+
+        .card:hover .details {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body style="background-color: #b9fcfc;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-s-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+                <div class="card">
+                    <div class="card-meta">
+                        <div class="photo">
+                        </div>
+                        <ul class="details">
+                            <li class="author"><i class="fa fa-user"></i>وحید صالحی</li>
+                            <li class="date"><i class="fa fa-calendar-check"></i>25 مرداد</li>
+                            <li class="tags">
+                                <a href="#">HTML</a>
+                                <a href="#">PHP</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-description">
+                        <h1>دوره طراحی وب</h1>
+                        <h2> دوره 15 پروژه کاربری توسط css و جی کوئری</h2>
+                        <p>بدون شک اولین قدم
+                            هر کسی برای
+                            ورود به دنیای طراحی و برنامه نویسی وب یادگیری مباحث پایه CSS و HTML است. اما برای کسی که قصد
+                            داره
+                            به یک فرانت اند
+                            تبدیل بشه
+                            این دو مورد تازه شروع یک راه پر از چالشه!
+                        </p>
+                        <a href="">بیشتر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

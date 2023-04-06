@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *,
+    body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        direction: rtl;
+        background-color: #fcdc29;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .menu {
+        min-width: 250px;
+        display: block;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .item {
+        background-color: 1px solid #ff6f61;
+    }
+
+    .item .btn {
+        background-color: #ff6f61;
+        display: block;
+        padding: 15px 20px;
+        color: #fff;
+    }
+
+    .subMenu {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .7s ease;
+
+    }
+
+    .subMenu a {
+        background-color: #273057;
+        ;
+        display: block;
+        border-bottom: 1px solid #394c7f;
+        padding: 15px 20px;
+        color: #fff;
+        position: relative;
+    }
+
+    .subMenu a::before {
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 6px;
+        left: 0;
+        top: 0;
+        border-top: 24px solid transparent;
+        border-left: 15px solid #fcdc29;
+        border-bottom: 24px solid transparent;
+        opacity: 0;
+        transition: opacity .5s;
+    }
+    .subMenu a::after {
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 6px;
+        right: 0;
+        top: 0;
+        border-top: 24px solid transparent;
+        border-right: 15px solid #fcdc29;
+        border-bottom: 24px solid transparent;
+        opacity: 0;
+        transition: opacity .5s;
+    }
+    .subMenu a:hover::before{
+        opacity: 1;
+    }
+    .subMenu a:hover::after{
+        opacity: 1;
+    }
+    .item:target .subMenu {
+        max-height: 400px;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="menu-container">
+            <ul class="menu">
+                <li class="item" id="account"><a class="btn" href="#account">دور‌های آموزشی</a>
+                    <div class="subMenu">
+                        <a href="#">طراحی وب</a>
+                        <a href="#">دورهای آموزشی</a>
+                        <a href="#">جاوااسکریپت</a>
+                    </div>
+                </li>
+                <li class="item" id="about"><a class="btn" href="#about">تماس با ما</a>
+                    <div class="subMenu">
+                        <a href="#">تلگرام </a>
+                        <a href="#">اینستاگرام</a>
+                    </div>
+                </li>
+                <li class="item" id="support"><a class="btn" href="#support">پشتیبانی</a>
+                    <div class="subMenu">
+                        <a href="#">تلگرام </a>
+                        <a href="#">اینستاگرام</a>
+                        <a href="#">ایمیل</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
